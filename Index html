@@ -389,16 +389,7 @@ async function startAnalysis() {
 }
 
 function classifyImage(imageDataUrl) {
-  // Simple deterministic pick based on image content length — this is a DEMO simulation,
-  // not a real diagnostic model. Replace with a real backend call when available.
-  let hash = 0;
-  for (let i = 0; i < imageDataUrl.length; i += 97) {
-    hash = (hash + imageDataUrl.charCodeAt(i)) % 997;
-  }
-  const seed = hash % analysisOutcomes.length;
-  return analysisOutcomes[seed];
-}
-
+  // Simple deterministic pick based on image content length — this is a DEMO simulat
 function showResults(outcome) {
   document.getElementById('resultImg').src = capturedImageData;
   const badge = document.getElementById('severityBadge');
